@@ -10,16 +10,15 @@
 #prompt redhat
 
 # Load Syntax-Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Set Aliases
 alias ll="ls -FlAh --color=auto"
 alias ls="ls -Flh --color=auto"
 alias grep="grep --color=auto"
 alias proc="ps -ef | grep $1"
-alias wttr="curl http://wttr.in/Osnabrueck"
 alias x="exit "
-alias pacclear="sudo pacman -Rnsu $(pacman -Qqdt) && sudo pacman -Sc && sync"
+#alias pacclear="sudo pacman -Rnsu $(pacman -Qqdt) && sudo pacman -Sc && sync"
 
 # Generate Random Password
 genpasswd() {
