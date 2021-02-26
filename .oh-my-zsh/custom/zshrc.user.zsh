@@ -6,11 +6,8 @@
 # Set ruby gems PATH
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
-# Set default prompt
-#prompt redhat
-
 # Load Syntax-Highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # Set Aliases
 alias ll="ls -FlAh --color=auto"
@@ -32,4 +29,6 @@ pingim() {
     local INPUT=$1
     ping -c 1000 -i 1 -vO -s 504 $INPUT | while read PING; do echo "$(date +%d.%m.%Y-%H:%M:%S): $PING" 2>&1 ; done
 }
- 
+
+# Set starship prompt
+eval "$(starship init zsh)" 
