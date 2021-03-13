@@ -20,6 +20,9 @@ alias proc="ps -ef | grep $1"
 alias x="exit "
 #alias pacclear="sudo pacman -Rnsu $(pacman -Qqdt) && sudo pacman -Sc && sync"
 
+#Export path variables
+#export 'PATH="$PATH:/root/.local/bin"'
+
 # Generate Random Password
 genpasswd() {
     local INPUT=$1
