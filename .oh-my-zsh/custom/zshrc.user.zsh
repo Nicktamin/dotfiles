@@ -9,6 +9,9 @@
 # Set default prompt
 #prompt redhat
 
+# Force colour
+export TERM=xterm-256color
+
 # Load Syntax-Highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
