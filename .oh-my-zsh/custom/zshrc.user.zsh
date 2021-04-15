@@ -6,22 +6,30 @@
 # Set ruby gems PATH
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
-# Set default prompt
-#prompt redhat
-
-# Force colour
-export TERM=xterm-256color
-
 # Load Syntax-Highlighting
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+# Load broot config
+source /home/nick/.config/broot/launcher/bash/br
 
 # Set Aliases
-alias ll="ls -FlAh --color=auto"
-alias ls="ls -Flh --color=auto"
-alias grep="grep --color=auto"
-alias proc="ps -ef | grep $1"
-alias x="exit "
-#alias pacclear="sudo pacman -Rnsu $(pacman -Qqdt) && sudo pacman -Sc && sync"
+if [ "$(command -v exa)" ]; then
+    unalias -m 'll'
+    unalias -m 'l'
+    unalias -m 'la'
+    unalias -m 'ls'
+    alias ls='exa -G  --color auto --icons -a -s type'
+    alias ll='exa -l --color always --icons -a -s type'
+fi
+
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat -pp'
+fi
+
+alias grep='grep --color=auto'
+alias x='exit '
+alias listcmd='echo "find - fd, grep - rg, tree - br, cat - bat, ps - procs, yay - paru"'
 
 #Export path variables
 #export 'PATH="$PATH:/root/.local/bin"'
@@ -38,4 +46,6 @@ pingim() {
     local INPUT=$1
     ping -c 1000 -i 1 -vO -s 504 $INPUT | while read PING; do echo "$(date +%d.%m.%Y-%H:%M:%S): $PING" 2>&1 ; done
 }
- 
+
+# Set starship prompt
+eval "$(starship init zsh)" 
