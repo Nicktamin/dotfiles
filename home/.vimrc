@@ -148,6 +148,9 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 " Adds syntax for nerdtree
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" Adds fuzzyfind
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 " !!!NEEDS TO BE LAST!!! Icons for Nerdtree
 Plug 'ryanoasis/vim-devicons'
 

@@ -73,6 +73,7 @@ plugins=(
     git
     systemadmin
     tmux
+    fzf
 )
 
 source $ZSH/oh-my-zsh.sh
