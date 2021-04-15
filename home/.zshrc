@@ -102,3 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Set starship prompt
+if [ "$(command -v starship)" ]; then
+    eval "$(starship init zsh)"
+fi

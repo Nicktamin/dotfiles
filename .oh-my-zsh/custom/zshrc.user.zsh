@@ -54,8 +54,3 @@ pingim() {
     local INPUT=$1
     ping -c 1000 -i 1 -vO -s 504 $INPUT | while read PING; do echo "$(date +%d.%m.%Y-%H:%M:%S): $PING" 2>&1 ; done
 }
-
-# Set starship prompt
-if [ "$(command -v starship)" ]; then
-    eval "$(starship init zsh)" 
-fi
