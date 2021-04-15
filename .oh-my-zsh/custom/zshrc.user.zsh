@@ -6,6 +6,9 @@
 # Set ruby gems PATH
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
+# Force colour
+export TERM=xterm-256color
+
 # Load Syntax-Highlighting
 if [ -f '/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]; then
     source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -27,8 +30,8 @@ if [ "$(command -v exa)" ]; then
     unalias -m 'l'
     unalias -m 'la'
     unalias -m 'ls'
-    alias ls='exa -G  --color auto --icons -a -s type'
-    alias ll='exa -l --color always --icons -a -s type'
+    alias ls='exa -G  --color auto -a -s type'
+    alias ll='exa -l --color always -a -s type'
 fi
 
 alias grep='grep --color=auto'
@@ -53,4 +56,6 @@ pingim() {
 }
 
 # Set starship prompt
-eval "$(starship init zsh)" 
+if [ "$(command -v starship)" ]; then
+    eval "$(starship init zsh)" 
+fi
