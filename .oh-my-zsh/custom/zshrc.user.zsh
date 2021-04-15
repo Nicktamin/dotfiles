@@ -17,11 +17,6 @@ if [ -f '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 fi
 
-# Load command prompt auto suggestion
-if [ -f '/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh' ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
 # Load broot config
 if [ "$(command -v br)" ]; then
     source /home/nick/.config/broot/launcher/bash/br
