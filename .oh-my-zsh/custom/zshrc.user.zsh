@@ -7,10 +7,19 @@
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # Load Syntax-Highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+if [ -f '/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [ -f '/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh' ]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+fi
 
 # Load broot config
-source /home/nick/.config/broot/launcher/bash/br
+if [ "$(command -v br)" ]; then
+    source /home/nick/.config/broot/launcher/bash/br
+    unalias -m 'tr'
+    alias tr='br'
+fi
 
 # Set Aliases
 if [ "$(command -v exa)" ]; then
@@ -22,13 +31,9 @@ if [ "$(command -v exa)" ]; then
     alias ll='exa -l --color always --icons -a -s type'
 fi
 
-if [ "$(command -v bat)" ]; then
-  unalias -m 'cat'
-  alias cat='bat -pp'
-fi
-
 alias grep='grep --color=auto'
 alias x='exit '
+alias proc= "ps -ef | grep {$1}"
 alias listcmd='echo "find - fd, grep - rg, tree - br, cat - bat, ps - procs, yay - paru"'
 
 #Export path variables
