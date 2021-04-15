@@ -46,7 +46,7 @@ ZSH_THEME="ys"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -78,9 +78,9 @@ plugins=(
 
 # Fuzzy find config
 export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --inline-info"
-export FZF_DEFAULT_COMMAND='fdfind --follow --exclude .git --hidden --type f --type l'
-export FZF_CTRL_T_COMMAND='fdfind --follow --exclude .git --hidden'
-export FZF_ALT_C_COMMAND='fdfind --follow --exclude .git --hidden --type d'
+export FZF_DEFAULT_COMMAND='fd --follow --exclude .git --hidden --type f --type l'
+export FZF_CTRL_T_COMMAND='fd --follow --exclude .git --hidden'
+export FZF_ALT_C_COMMAND='fd --follow --exclude .git --hidden --type d'
 
 source $ZSH/oh-my-zsh.sh
 
