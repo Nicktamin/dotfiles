@@ -76,6 +76,12 @@ plugins=(
     fzf
 )
 
+# Fuzzy find config
+export FZF_DEFAULT_OPTS="--no-mouse --height 50% -1 --reverse --inline-info"
+export FZF_DEFAULT_COMMAND='fdfind --follow --exclude .git --hidden --type f --type l'
+export FZF_CTRL_T_COMMAND='fdfind --follow --exclude .git --hidden'
+export FZF_ALT_C_COMMAND='fdfind --follow --exclude .git --hidden --type d'
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
