@@ -34,6 +34,11 @@ if [ "$(command -v exa)" ]; then
     alias ll='exa -l --color always -a -s type'
 fi
 
+if [ "$(command -v fdfind)" ]; then
+    unalias -m 'fd'
+    alias fd='fdfind'
+fi
+
 alias grep='grep --color=auto'
 alias x='exit '
 alias proc= "ps -ef | grep {$1}"
