@@ -17,8 +17,14 @@ filetype plugin on
 " Set Leader for Keybinds
 let mapleader = ","
 
-" Show line numbers
-set number
+" Show line numbers dynamicly
+set number relativenumber
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Show the current line of the cursor
 set cursorline
