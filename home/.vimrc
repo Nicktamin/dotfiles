@@ -121,6 +121,9 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+" Nord color scheme
+Plug 'arcticicestudio/nord-vim'
+
 " Graphical undo
 Plug 'mbbill/undotree'
 
@@ -162,6 +165,12 @@ Plug 'ryanoasis/vim-devicons'
 
 " Initialize plugin system
 call plug#end()
+
+" Nord color scheme
+colorscheme nord
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
 
 " Close Nerdtree when opening a file
 let NERDTreeQuitOnOpen = 1
