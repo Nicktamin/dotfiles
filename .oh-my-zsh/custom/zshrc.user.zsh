@@ -33,6 +33,7 @@ if [ "$(command -v exa)" ]; then
     alias ls='exa -G  --color always -a -s type'
     alias ll='exa -l --color always -a -h -s type'
     alias l='exa -l --color always -h -s type'
+    alias lt='exa -l --color always -a -h -T -L2 -s type'
 fi
 
 if [ "$(command -v fdfind)" ]; then
