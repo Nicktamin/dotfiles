@@ -40,6 +40,10 @@ if [ "$(command -v fdfind)" ]; then
     alias fd='fdfind'
 fi
 
+if [ "$(command -v batcat)" ]; then
+    alias bat='batcat'
+fi
+
 alias grep='grep --color=auto'
 alias x='exit '
 alias proc= "ps -ef | grep {$1}"
